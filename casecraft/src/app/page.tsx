@@ -16,13 +16,13 @@ import FirstTestimonial from '../../public/testimonials/1.jpg'
 
 export default function Home() {
   return (
-    <div className="bg-slate-50">
+    <div className="bg-slate-50 overflow-x-hidden">
       <section>
-        <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52">
+        <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-24 xl:pt-32 lg:pb-52 max-w-screen mx-auto">
             <div className='col-span-2 px-6 lg:px-0 lg:pt-4'>
                 <div className='relative mx-auto text-center lg:text-left flex flex-col items-center lg:items-start'>
-                  <div className='absolute w-28 left-0 top-20 hidden lg:block'>
-                      <Image src={Logo} alt='logoImage' className='w-full'></Image>
+                  <div className='absolute w-28 left-[-6px] top-[-3rem] hidden lg:block'>
+                      <Image src={Logo} alt='logoImage' className='w-full h-full rounded-full object-cover'></Image>
                   </div>
                   <h1 className='relative w-fit tracking-tight text-balance mt-16 font-bont !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-7xl'>
                     Your Image on a <span className='bg-green-600 px-2 text-white'>Custom</span> Phone Case
@@ -69,10 +69,10 @@ export default function Home() {
                </div>
             </div>
 
-            <div className='col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit'>
+            <div className='col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit relative'>
                 <div className='relative md:max-w-xl'>
-                    <Image src={YourImage} alt="yourDummyImage" className='absolute w-40 lg:w-52 left-56 -top-20 select-none hidden sm:block lg:hidden xl:block'/>
-                    <Image src={Line} alt="yourDummyImage" className='absolute w-20 -left-6 -bottom-6 select-none'/>
+                    <Image src={YourImage} alt="yourDummyImage" className='absolute w-40 lg:w-52 left-10 sm:left-[11rem] -top-[8rem] select-none hidden sm:block lg:hidden xl:block'/>
+                    <Image src={Line} alt="yourDummyImage" className='absolute w-20 left-0 sm:-left-6 -bottom-6 select-none'/>
                     <Phone className='w-64' imgSrc={FirstTestimonial}/>
                 </div>
             </div>
