@@ -1,7 +1,19 @@
 import MaxWidthWrapper from '@/app/components/MaxWidthWrapper'
 import Logo from '../../public/CaseCraftLogo.webp'
+import User1 from '../../public/users/user-1.png'
+import User2 from '../../public/users/user-2.png'
+import User3 from '../../public/users/user-3.png'
+import User4 from '../../public/users/user-4.jpg'
+import User5 from '../../public/users/user-5.jpg'
+import YourImage from '../../public/your-image.png'
+import Line from '../../public/line.png'
 import Image from 'next/image';
-import {Check} from 'lucide-react'
+import {Check,Star} from 'lucide-react'
+import Phone from './components/Phone'
+import FirstTestimonial from '../../public/testimonials/1.jpg' 
+
+
+
 export default function Home() {
   return (
     <div className="bg-slate-50">
@@ -35,7 +47,34 @@ export default function Home() {
                           </li>
                       </div>
                   </ul>
+                  <div className='mt-12 flex flex-col sm:flex-row items-center sm:items-start gap-5'>
+                    <div className='flex -space-x-4'>
+                        <Image src ={User1} alt="userImage" className='inline-block h-10 w-10 rounded-full ring-2 ring-slate-100 '/>
+                        <Image src ={User2} alt="userImage" className='inline-block h-10 w-10 rounded-full ring-2 ring-slate-100 '/>
+                        <Image src ={User3} alt="userImage" className='inline-block h-10 w-10 rounded-full ring-2 ring-slate-100 '/>
+                        <Image src ={User4} alt="userImage" className='inline-block h-10 w-10 rounded-full ring-2 ring-slate-100 '/>
+                        <Image src ={User5} alt="userImage" className='inline-block object-cover h-10 w-10 rounded-full ring-2 ring-slate-100 '/>
+                    </div>
+                    <div className='flex flex-col justify-between items-center sm:items-start'>
+                        <div className='flex gap-0.5'>
+                            <Star className='h-4 w-4 text-green-600 fill-green-600'/>   
+                            <Star className='h-4 w-4 text-green-600 fill-green-600'/>   
+                            <Star className='h-4 w-4 text-green-600 fill-green-600'/>   
+                            <Star className='h-4 w-4 text-green-600 fill-green-600'/>   
+                            <Star className='h-4 w-4 text-green-600 fill-green-600'/>   
+                        </div>
+                        <p><span className='font-semibold'>1.250</span> happy customers</p>
+                    </div>
+                  </div>
                </div>
+            </div>
+
+            <div className='col-span-full lg:col-span-1 w-full flex justify-center px-8 sm:px-16 md:px-0 mt-32 lg:mx-0 lg:mt-20 h-fit'>
+                <div className='relative md:max-w-xl'>
+                    <Image src={YourImage} alt="yourDummyImage" className='absolute w-40 lg:w-52 left-56 -top-20 select-none hidden sm:block lg:hidden xl:block'/>
+                    <Image src={Line} alt="yourDummyImage" className='absolute w-20 -left-6 -bottom-6 select-none'/>
+                    <Phone className='w-64' imgSrc={FirstTestimonial}/>
+                </div>
             </div>
         </MaxWidthWrapper>
       </section>
