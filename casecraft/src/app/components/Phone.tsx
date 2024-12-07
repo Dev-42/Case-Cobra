@@ -9,15 +9,28 @@ interface PhoneProps extends HTMLAttributes<HTMLDivElement>{
     dark?:boolean
 }
 
-const Phone = ({imgSrc,className,dark=false,...props}:PhoneProps) => {
+const Phone = ({ imgSrc, className, dark = false, ...props }: PhoneProps) => {
   return (
-    <div className={cn('relative pointer-events-none z-50 overflow-hidden',className)} {...props}>
-      <Image src={dark ? PhoneDark : PhoneLight} alt='phoneImg' className='pointer-events-none z-50 select-none'/>
-      <div className='absolute -z-10 inset-0'>
-          <Image src = {imgSrc} className='object-cover' alt='overlayingPhone'/>  
+    <div
+      className={cn('relative pointer-events-none z-50 overflow-hidden', className)}
+      {...props}>
+      <Image
+        src={dark ? PhoneDark : PhoneLight}
+        alt='Phone Frame'
+        className='pointer-events-none z-50 select-none'
+        layout="responsive"
+      />
+      <div className='absolute inset-0 -z-10'>
+        <Image
+          src={imgSrc}
+          alt='Phone Content'
+          className='object-cover'
+          layout="fill"
+        />
       </div>
     </div>
-  )
-}
+  );
+};
+
 
 export default Phone
