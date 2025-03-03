@@ -1,28 +1,46 @@
-import React from 'react'
-import MaxWidthWrapper from './MaxWidthWrapper'
-import Link from 'next/link'
+import React from "react";
+import MaxWidthWrapper from "./MaxWidthWrapper";
+import Link from "next/link";
+import { FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
+
 const Footer = () => {
   return (
-    <footer className='bg-white h-20 relative'>
-        <MaxWidthWrapper>
-            <div className='border-t border-gray-200' />
-            <div className='h-full flex flex-col md:flex-row md:justify-between justify-center items-center'>
-               <div className='text-center md:text-left pb-2 md:pb-0'>
-                  <p className='text-sm text-muted-foreground'>
-                    &copy; {new Date().getFullYear()} All rights reserved
-                  </p>  
-               </div> 
-               <div className='flex items-center justify-center'>
-                    <div className='space-x-8 flex'>
-                        <Link href='#' className='text-sm text-muted-foreground hover:text-gray-600'>Terms</Link>
-                        <Link href='#' className='text-sm text-muted-foreground hover:text-gray-600'>Privacy Policy</Link>
-                        <Link href='#' className='text-sm text-muted-foreground hover:text-gray-600'>Cookie Policy</Link>
-                    </div>
-               </div>
-            </div>   
-        </MaxWidthWrapper>
-    </footer>
-  )
-}
+    <footer className="bg-white border-t border-gray-200 py-6">
+      <MaxWidthWrapper>
+        <div className="flex flex-col md:flex-row items-center justify-between">
+          {/* Left Side - Copyright */}
+          <p className="text-sm text-muted-foreground text-center md:text-left">
+            &copy; {new Date().getFullYear()} Dev Bhattacharya. All rights reserved.
+          </p>
 
-export default Footer
+          {/* Right Side - Social Links */}
+          <div className="flex space-x-6 mt-3 md:mt-0">
+            <Link
+              href="https://github.com/Dev-42"
+              target="_blank"
+              className="text-gray-600 hover:text-red-500 transition duration-300"
+            >
+              <FaGithub size={20} />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/dev42/"
+              target="_blank"
+              className="text-gray-600 hover:text-red-500 transition duration-300"
+            >
+              <FaLinkedin size={20} />
+            </Link>
+            <Link
+              href="https://devbhattacharya.netlify.app/"
+              target="_blank"
+              className="text-gray-600 hover:text-red-500 transition duration-300"
+            >
+              <FaGlobe size={20} />
+            </Link>
+          </div>
+        </div>
+      </MaxWidthWrapper>
+    </footer>
+  );
+};
+
+export default Footer;
