@@ -11,11 +11,11 @@ const Navbar = async() => {
     const isAdmin = user?.email === process.env.ADMIN_EMAIL
     // console.log(isAdmin)
   return (
-    <nav className='z-100 sticky h-[4.5rem] inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
+    <nav className='z-1000 sticky h-[4.5rem] inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all'>
         <MaxWidthWrapper>
-            <div className='flex h-[4.5rem] items-center justify-between border-zinc-200'>
+            <div className='flex h-[4.5rem] items-center justify-between border-zinc-200 z-1000'>
                 <Link href="/" className='flex z-40 font-semibold'>
-                    case<span className='text-green-600'>cobra</span>
+                    case<span className='bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-transparent'>Craft</span>
                 </Link>
                 <div className='h-full flex items-center space-x-4'>
                     {user ? (
