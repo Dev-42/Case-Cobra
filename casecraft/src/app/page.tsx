@@ -32,26 +32,26 @@ export default function Home() {
                       <Image src={Logo} alt='logoImage' className='w-full h-full rounded-full object-cover'></Image>
                   </div>
                   <h1 className='relative w-fit tracking-tight text-balance mt-16 font-bont !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-7xl'>
-                    Your Image on a <span className='bg-green-600 px-2 text-white'>Custom</span> Phone Case
+                    Craft Your <span className='bg-gradient-to-r from-yellow-500 to-red-500 px-2 text-white'>Identity</span> on a Case
                   </h1>
                   <p className='mt-8 text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap'>
-                    Capture your favorite memories with your own , <span className='font-semibold'>one-of-one</span> phone case.
-                    CaseCobra allows you to protect your memories , not just your phone case.
+                    Turn your cherished moments into a <span className='font-semibold'>one-of-a-kind</span> phone case.  
+                    With CaseCraft, you&apos;re not just protecting your phone&mdash;you&apos;re preserving your memories.
                   </p>
                   <ul className='mt-8 space-y-2 text-left font-medium flex flex-col items-center sm:items-start'>
                       <div className='space-y-2'>
-                          <li className='flex gap-1.5 items-center text-left'>
-                            <Check className='h-5 w-5 shrink-0 text-green-600'/>
-                            High-quality, durable material 
-                          </li>
-                          <li className='flex gap-1.5 items-center text-left'>
-                            <Check className='h-5 w-5 shrink-0 text-green-600'/>
-                            5 year print guarantee 
-                          </li>
-                          <li className='flex gap-1.5 items-center text-left'>
-                            <Check className='h-5 w-5 shrink-0 text-green-600'/>
-                            Mordern iPhone models supported 
-                          </li>
+                        <li className='flex gap-1.5 items-center text-left'>
+                          <Check className='h-5 w-5 shrink-0 text-[#ed7629]' />
+                          Crafted from premium, long-lasting materials
+                        </li>
+                        <li className='flex gap-1.5 items-center text-left'>
+                          <Check className='h-5 w-5 shrink-0 text-[#ed7629]' />
+                          Vibrant prints that stay fresh for 5 years
+                        </li>
+                        <li className='flex gap-1.5 items-center text-left'>
+                          <Check className='h-5 w-5 shrink-0 text-[#ed7629]' />
+                          Compatible with the latest iPhone models
+                        </li>
                       </div>
                   </ul>
                   <div className='mt-12 flex flex-col sm:flex-row items-center sm:items-start gap-5'>
@@ -64,13 +64,13 @@ export default function Home() {
                     </div>
                     <div className='flex flex-col justify-between items-center sm:items-start'>
                         <div className='flex gap-0.5'>
-                            <Star className='h-4 w-4 text-green-600 fill-green-600'/>   
-                            <Star className='h-4 w-4 text-green-600 fill-green-600'/>   
-                            <Star className='h-4 w-4 text-green-600 fill-green-600'/>   
-                            <Star className='h-4 w-4 text-green-600 fill-green-600'/>   
-                            <Star className='h-4 w-4 text-green-600 fill-green-600'/>   
+                            <Star className='h-4 w-4 text-[#fdcc06] fill-[#fdcc06]'/>   
+                            <Star className='h-4 w-4 text-[#fdcc06] fill-[#fdcc06]'/>   
+                            <Star className='h-4 w-4 text-[#fdcc06] fill-[#fdcc06]'/>   
+                            <Star className='h-4 w-4 text-[#fdcc06] fill-[#fdcc06]'/>   
+                            <Star className='h-4 w-4 text-[#fdcc06] fill-[#fdcc06]'/>   
                         </div>
-                        <p><span className='font-semibold'>1.250</span> happy customers</p>
+                        <p><span className='font-semibold'>1.250k</span> happy customers</p>
                     </div>
                   </div>
                </div>
@@ -167,19 +167,19 @@ export default function Home() {
             </div>
             <ul className='mx-auto mt-12 max-w-prose sm:text-lg space-y-2 w-fit'>
               <li className='w-fit'>
-                <Check className='h-5 w-5 text-green-600 inline mr-1.5 '/>
+                <Check className='h-5 w-5 text-[#ed7629] inline mr-1.5 '/>
                 High-quality silicone material
               </li>
               <li className='w-fit'>
-                <Check className='h-5 w-5 text-green-600 inline mr-1.5 '/>
+                <Check className='h-5 w-5 text-[#ed7629] inline mr-1.5 '/>
                 Scratch- and fingerprint resistant coating
               </li>
               <li className='w-fit'>
-                <Check className='h-5 w-5 text-green-600 inline mr-1.5 '/>
+                <Check className='h-5 w-5 text-[#ed7629] inline mr-1.5 '/>
                 Wireless charging compatible
               </li>
               <li className='w-fit'>
-                <Check className='h-5 w-5 text-green-600 inline mr-1.5 '/>
+                <Check className='h-5 w-5 text-[#ed7629] inline mr-1.5 '/>
                 5 year print warranty
               </li>
               <div className='flex justify-center'>
