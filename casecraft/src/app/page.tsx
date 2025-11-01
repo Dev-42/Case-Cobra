@@ -1,3 +1,5 @@
+'use client'
+
 import MaxWidthWrapper from '@/app/components/MaxWidthWrapper'
 import Logo from '../../public/CaseCraftLogo.webp'
 import User1 from '../../public/users/user-1.png'
@@ -9,7 +11,7 @@ import YourImage from '../../public/your-image.png'
 import SnakeImg from '../../public/snake-2.png'
 import Line from '../../public/line.png'
 import Image from 'next/image';
-import { ArrowRight, Check, Star, Shield, Sparkles, Palette, Zap, Award, TrendingUp, Heart, Package, Truck } from 'lucide-react'
+import { ArrowRight, Check, Star, Shield, Sparkles, Zap, Award, TrendingUp, Heart, Package, Truck, X } from 'lucide-react'
 import Phone from './components/Phone'
 import FirstTestimonial from '../../public/testimonials/1.jpg' 
 import { Icons } from './components/Icons'
@@ -18,10 +20,13 @@ import Arrow from '../../public/arrow.png'
 import HorseImg from '../../public/horse.jpg'
 import HorseMobileCover from '../../public/horse_phone.jpg'
 import Link from 'next/link'
-import { buttonVariants } from '@/components/ui/button'
+// import { buttonVariants } from '@/components/ui/button'
+import { useState } from 'react'
 
 
 export default function Home() {
+  const [showPreview, setShowPreview] = useState(false)
+  
   return (
     <div className="bg-white overflow-hidden">
       {/* Announcement Banner */}
@@ -173,17 +178,17 @@ export default function Home() {
                     <Image src={Line} alt="Design Element" className='absolute w-20 left-0 sm:-left-6 -bottom-6 select-none animate-in fade-in-0 slide-in-from-left-4 duration-1000 delay-500'/>
                     
                     {/* Phone with Enhanced Effects */}
-                    <div className='relative group cursor-pointer'>
+                    <div className='relative group cursor-pointer' onClick={() => setShowPreview(true)}>
                       {/* Glow effect */}
                       <div className='absolute -inset-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-[4rem] opacity-30 blur-2xl group-hover:opacity-50 transition-opacity'></div>
                       
                       {/* Phone Component */}
                       <div className='relative hover:scale-105 transition-transform duration-500'>
-                    <Phone className='w-64' imgSrc={FirstTestimonial}/>
+                        <Phone className='w-64' imgSrc={FirstTestimonial}/>
                       </div>
                       
                       {/* "Live Preview" Badge */}
-                      <div className='absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-xl border-2 border-orange-400 opacity-0 group-hover:opacity-100 transition-opacity'>
+                      <div className='absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-xl border-2 border-orange-400 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none'>
                         <p className='text-sm font-bold text-gray-800'>Live Preview!</p>
                       </div>
                     </div>
@@ -521,6 +526,99 @@ export default function Home() {
             </div>
         </MaxWidthWrapper>
       </section>
+
+      {/* Interactive Preview Modal */}
+      {showPreview && (
+        <div 
+          className='fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] flex items-center justify-center p-3 sm:p-4 animate-in fade-in-0 duration-300'
+          onClick={() => setShowPreview(false)}
+        >
+          <div 
+            className='relative w-full max-w-[340px] sm:max-w-sm animate-in zoom-in-95 duration-500'
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setShowPreview(false)}
+              className='absolute -top-8 sm:-top-10 right-0 bg-white/10 hover:bg-white/20 text-white p-1.5 sm:p-2 rounded-full transition-all hover:scale-110 backdrop-blur-md z-10'
+            >
+              <X className='h-4 w-4 sm:h-5 sm:w-5' />
+            </button>
+
+            {/* Content */}
+            <div className='bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-2xl border-2 border-white'>
+              {/* Header - More Compact */}
+              <div className='text-center mb-3'>
+                <div className='inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-gradient-to-r from-yellow-100 to-orange-100 border border-orange-300 rounded-full shadow mb-2'>
+                  <Sparkles className='h-3 w-3 text-orange-600 animate-pulse' />
+                  <span className='text-[10px] font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent'>
+                    Live Preview Mode
+                  </span>
+                </div>
+                <h2 className='text-lg sm:text-xl font-black text-gray-900 mb-0.5'>
+                  Your Custom Design
+                </h2>
+                <p className='text-gray-600 text-[11px]'>
+                  This is how your phone case will look!
+                </p>
+              </div>
+
+              {/* Phone Display */}
+              <div className='flex flex-col items-center justify-center gap-3'>
+                {/* Phone Preview - Smaller */}
+                <div className='relative group'>
+                  <div className='absolute -inset-1.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-[2rem] opacity-25 blur-lg animate-pulse'></div>
+                  <Phone className='w-40 sm:w-44 relative' imgSrc={FirstTestimonial}/>
+                </div>
+
+                {/* Features List - Ultra Compact */}
+                <div className='flex flex-col gap-1.5 w-full'>
+                  <div className='flex items-center gap-2 p-2 bg-white rounded-lg shadow-sm'>
+                    <div className='flex items-center justify-center h-6 w-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex-shrink-0'>
+                      <Check className='h-3.5 w-3.5 text-white stroke-[3px]' />
+                    </div>
+                    <div className='flex-1 min-w-0'>
+                      <h3 className='font-bold text-gray-900 text-[11px] leading-tight'>HD Quality Print</h3>
+                      <p className='text-[9px] text-gray-600 leading-tight'>Crystal clear colors</p>
+                    </div>
+                  </div>
+                  
+                  <div className='flex items-center gap-2 p-2 bg-white rounded-lg shadow-sm'>
+                    <div className='flex items-center justify-center h-6 w-6 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex-shrink-0'>
+                      <Shield className='h-3.5 w-3.5 text-white' />
+                    </div>
+                    <div className='flex-1 min-w-0'>
+                      <h3 className='font-bold text-gray-900 text-[11px] leading-tight'>Premium Protection</h3>
+                      <p className='text-[9px] text-gray-600 leading-tight'>Drop-proof & scratch-resistant</p>
+                    </div>
+                  </div>
+
+                  <div className='flex items-center gap-2 p-2 bg-white rounded-lg shadow-sm'>
+                    <div className='flex items-center justify-center h-6 w-6 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex-shrink-0'>
+                      <Heart className='h-3.5 w-3.5 text-white' />
+                    </div>
+                    <div className='flex-1 min-w-0'>
+                      <h3 className='font-bold text-gray-900 text-[11px] leading-tight'>5-Year Warranty</h3>
+                      <p className='text-[9px] text-gray-600 leading-tight'>Quality guaranteed</p>
+                    </div>
+                  </div>
+
+                  {/* CTA Button - Compact */}
+                  <Link 
+                    href='/configure/upload'
+                    className='mt-1 group relative inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 rounded-lg shadow-lg hover:shadow-orange-500/50 transition-all duration-300 active:scale-95 sm:hover:scale-105 overflow-hidden'
+                  >
+                    <span className='absolute inset-0 w-full h-full bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300'></span>
+                    <Sparkles className='relative h-3.5 w-3.5 mr-1.5' />
+                    <span className='relative'>Create Your Own</span>
+                    <ArrowRight className='relative h-3.5 w-3.5 ml-1.5 group-hover:translate-x-1 transition-transform' />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
