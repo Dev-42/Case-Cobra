@@ -50,8 +50,8 @@ export default function Home() {
         <MaxWidthWrapper className="pb-24 pt-10 lg:grid lg:grid-cols-3 sm:pb-32 lg:gap-x-0 xl:gap-x-8 lg:pt-20 xl:pt-28 lg:pb-52 relative z-10">
             <div className='col-span-2 px-6 lg:px-0 lg:pt-4'>
                 <div className='relative mx-auto text-center lg:text-left flex flex-col items-center lg:items-start'>
-                  {/* Floating Badge - Bestseller */}
-                  <div className='mb-4 sm:mb-6 inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-orange-300 rounded-full shadow-lg animate-in fade-in-0 zoom-in-95 duration-700'>
+                  {/* Floating Badge - Bestseller - Always Centered */}
+                  <div className='mb-4 sm:mb-6 inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-orange-300 rounded-full shadow-lg animate-in fade-in-0 zoom-in-95 duration-700 self-center'>
                     <TrendingUp className='h-3.5 w-3.5 sm:h-4 sm:w-4 text-orange-600' />
                     <span className='text-xs sm:text-sm font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent'>
                       #1 Custom Phone Cases
